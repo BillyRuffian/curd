@@ -1,0 +1,29 @@
+%section.feature
+  %h2= feature.name.empty? ? name : feature.name
+
+  - unless feature.description.empty?
+    %blockquote
+      = feature.description.gsub("\n", "<br/>")
+
+%section.scenarios
+  - feature.tests.each do |test|
+    %h4
+      = succeed ':' do 
+        = test.keyword
+      = test.name
+    %p= test.description
+
+    .steps
+      - test.steps.each do |step|
+        .keyword= step.keyword
+        .step
+          = step.text
+          - if step.block.is_a? CukeModeler::Table
+            %table.step-block.u-width-full
+              %tbody.u-width-full
+                - step.block.rows.each do |row|
+                  %tr
+                    - row.cells.each do |cell|
+                      %td= cell.value
+
+    %hr/

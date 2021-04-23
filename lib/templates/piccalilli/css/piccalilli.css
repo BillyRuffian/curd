@@ -1,0 +1,100 @@
+html {
+  font-size: 100%; 
+}
+body {
+  font-size: 1em;
+  font-family: "Cormorant Garamond", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+}
+
+p { 
+  font-size: 1.5em;
+}
+
+blockquote{
+  font-size: 1.4em;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #ad5a4b ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+  margin-left: 0;
+}
+
+blockquote::before{
+  content: "\201C";
+  color:#ad5a4b;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+blockquote::after{
+  content: '';
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+.steps {
+  margin: 0 0.2rem;
+  font-size: 1.2rem;
+  font-family: 'Source Sans Pro';
+  background-color: #f1f1f1;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;;
+  padding: 1rem 1.5rem;
+  display: block;
+}
+
+.keyword {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.step {
+  margin: 0 0.2rem;
+  font-size: 1.2rem;
+  /* font-family: 'Source Sans Pro'; */
+  background-color: #fffef7;
+  border: 1px solid #e0e0dc;
+  border-radius: 4px;;
+  padding: 1rem 1.5rem;
+  display: block;
+  box-shadow: 0 1px 4px #e0e0dc;
+}
+
+.step-block {
+  margin: 1.5rem 0.2rem 0 0.2rem;
+  font-size: 1.2rem;
+  /* font-family: 'Source Sans Pro'; */
+  background-color: #f2f1f1;
+  border: 1px solid #e0e0dc;
+  border-radius: 4px;;
+  padding: 1rem 1.5rem;
+  display: block;
+}
+
+
+.steps .table, .docstring {
+  margin: 0 2rem;
+}
+
+table {
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+table tbody {
+  width: 100%;
+  display: table;
+}

@@ -1,0 +1,40 @@
+!!!
+%html{:lang => "en"}
+  %head
+    /
+      Basic Page Needs
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    %meta{:charset => "utf-8"}/
+    %title Your page title here :)
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    /
+      Mobile Specific Metas
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    /
+      FONT
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    %link{:href => "https://fonts.gstatic.com", :rel => "preconnect"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Raleway:400,300,600", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Source+Sans+Pro&display=swap", :rel => "stylesheet"}/
+    
+    /
+      CSS
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    %link{:href => "#{css_prefix}normalize.css", :rel => "stylesheet"}/
+    %link{:href => "#{css_prefix}skeleton.css", :rel => "stylesheet"}/
+    %link{:href => "#{css_prefix}piccalilli.css", :rel => "stylesheet"}/
+    /
+      Favicon
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    %link{:href => "images/favicon.png", :rel => "icon", :type => "image/png"}/
+  %body
+    /
+      Primary Page Layout
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
+    .container{:style => "margin-top: 2em"}
+      = yield
+    /
+      End Document
+      ––––––––––––––––––––––––––––––––––––––––––––––––––
