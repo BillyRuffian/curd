@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Identity Interruption Screen</h2>
+<blockquote>
+As a user applying for a provisional licence online<br/>I want to be advised that I will need to confirm my identity<br/>So that I can ensure I have everything needed to complete my application
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01  Navigating to the Identity interruption screen
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;You will now need to confirm your identity&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02, AC-05  Display &quot;You will now need to confirm your identity&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;You will now need to confirm your identity&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;You will now need to confirm your identity&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03  Direct user to the next page in the flow
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;You will now need to confirm your identity&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Your details&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04a  User clicks on the back link to navigate back a page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;You will now need to confirm your identity&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Do you have or have you ever had any of the following medical conditions?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04b  User clicks on the browser back button to navigate back a page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;You will now need to confirm your identity&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I navigate backwards in the browser
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Do you have or have you ever had any of the following medical conditions?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04c  User navigates back and forth from the identity interruption screen
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;You will now need to confirm your identity&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Do you have or have you ever had any of the following medical conditions?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;You will now need to confirm your identity&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04d  User clicks on the back link to navigate back a page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Your details&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;You will now need to confirm your identity&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04e  User clicks on the browser back button to navigate back a page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Your details&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I navigate backwards in the browser
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;You will now need to confirm your identity&quot; page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

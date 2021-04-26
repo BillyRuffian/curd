@@ -1,5 +1,8 @@
+require 'cgi'
 module Curd
   class Engine
+    include ::CGI::Util
+
     TEMPLATE_ROOT_PATH = File.join(File.dirname(__dir__), 'templates')
 
     def initialize(config)
@@ -22,7 +25,7 @@ module Curd
       feature_files = directory.feature_files
       if !feature_files&.empty?
         FileUtils.mkdir_p(output_to)
-        feature_files.each do |ff| 
+        feature_files.each do |ff|
           File.write(File.join(output_to, "#{ff.name}.html"), render_feature(ff, depth: path.count) )
         end
       end
@@ -36,7 +39,7 @@ module Curd
     def render_feature(feature_file, depth:)
       css = '../' * (depth - 1) + 'css/'
       output = @layout.render(self, css_prefix: css) do
-       Tilt.new(template('feature.haml')).render(feature_file)
+       Tilt.new(template('feature.haml')).render(self, file: feature_file)
       end
 
       output

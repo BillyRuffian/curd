@@ -1,29 +1,50 @@
 %section.feature
-  %h2= feature.name.empty? ? name : feature.name
+  %h2=h file.feature.name.empty? ? file.name : file.feature.name
 
-  - unless feature.description.empty?
+  - unless file.feature.description.empty?
     %blockquote
-      = feature.description.gsub("\n", "<br/>")
+      =h(file.feature.description).gsub("\n", "<br/>")
 
 %section.scenarios
-  - feature.tests.each do |test|
+  - file.feature.tests.each do |test|
     %h4
       = succeed ':' do 
-        = test.keyword
-      = test.name
-    %p= test.description
+        =h test.keyword
+      =h test.name
+    %p=h(test.description).gsub("\n", "<br/>")
 
     .steps
       - test.steps.each do |step|
-        .keyword= step.keyword
+        .keyword=h step.keyword
         .step
-          = step.text
+          =h step.text
           - if step.block.is_a? CukeModeler::Table
             %table.step-block.u-width-full
               %tbody.u-width-full
                 - step.block.rows.each do |row|
                   %tr
                     - row.cells.each do |cell|
-                      %td= cell.value
+                      %td=h cell.value
+          -elsif step.block.is_a? CukeModeler::DocString
+            .step-block
+              =h(step.block.content).gsub("\n", "<br/>")
+      
+      - if test.respond_to?(:examples)
+        - test.examples.each do |example|   
+          .keyword
+            =h example.keyword
+            =h example.name
+          .step
+            %table.example-block.u-width-full
+              %thead.u-width-full
+                %tr
+                  - example.rows.first.cells.each do |header|
+                    %th=h header.value
+              %tbody
+                - example.rows[1..-1].each do |row|
+                  %tr
+                    - row.cells.each do |cell|
+                      %td=h cell.value
+
 
     %hr/

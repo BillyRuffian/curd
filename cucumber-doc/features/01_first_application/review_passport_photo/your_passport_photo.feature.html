@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Your passport photo</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to be able to use my passport photo on my provisional licence if I choose to<br/>So that I do not need to spend time providing a new photograph
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-2 User selects “Yes” and then selects “Continue” while they have a valid passport signature
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Do you want to use this signature from your passport on your driving licence?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01 Display  - &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+the correct content is present for &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the user&#39;s passport photo will be displayed as a preview
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-4 User has not selected an option
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you want to use this photo on your driving licence</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select yes if you want to use this photo on your driving licence</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you want to use this photo on your driving licence</td>
+<td>passport_photo_decision</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-15k User clicks the back link on dropout page - Decline to use passport photo dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;You will now need to provide a photo and signature&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-11 Display page content - Decline to use passport photo dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;User declines to use passport photo&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the &#39;Redirect to existing service&#39; button has a link to the DLO page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-12 and AC-15l Display page content and do not contain back link - Photo returned from identity is corrupt
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK with the identity: &quot;person with corrupt passport photo&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;You will now need to provide a photo and signature&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Sorry, there is a problem with this service&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Photo from HMPO is corrupt&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the screen does not contain a back link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the &#39;Redirect to existing service&#39; button has a link to the DLO page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Shortened address</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>when my address is too long to fit on a driving license<br/>I need to see a screen displaying what my shortened address will look like
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-02 Display page content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;This address will be on your licence&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03 User with pip
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK with the identity: &quot;person under 17&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Are you currently claiming Personal Independence Payment (PIP)?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click on Back
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am redirected to the &quot;This address will be on your licence&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04 User without pip
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Contact details&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click on Back
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am redirected to the &quot;This address will be on your licence&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05 Display page content - Declined truncated address dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Truncated address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the &#39;Redirect to existing service&#39; button has a link to the DLO page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06 User does not make a selection
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click on Continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select yes if you want to use this address</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you want to use this address</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you want to use this address</td>
+<td>shortened address decision</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07 User with middle name different to HMPO navigates backwards from shortened address page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Your details&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I continue the application with an identity with a second forename different to HMPO and long address
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click on Back
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;We&#39;ve used your middle name from your UK passport&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-15e User clicks the back link on dropout page - Declined truncated address dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>Given</div>
+<div class='step'>
+I have accessed the service on GOV.UK
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a long address postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select the long address and continue with my application
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;This address will be on your licence&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

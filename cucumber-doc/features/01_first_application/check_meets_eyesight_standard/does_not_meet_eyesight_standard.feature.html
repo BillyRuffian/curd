@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Does Not Meet Eyesight Standard</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to be prevented from applying when I do not meet the legal eyesight standard for driving<br/>So that I do not waste my time applying if I am not currently eligible
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-02 User chooses to return to GOV.UK
+</h4>
+<p>Select No and continue button will redirect the user to the<br/>&#39;Does not meet eyesight standard&#39; screen</p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Return to GOV.UK&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Welcome to GOV UK&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-1g  User clicks back link on dropout - Meet eyesight standard
+</h4>
+<p>Session preserved on arrival</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;You cannot apply for a Great Britain (GB) provisional licence&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Can you meet the legal eyesight standard for driving?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

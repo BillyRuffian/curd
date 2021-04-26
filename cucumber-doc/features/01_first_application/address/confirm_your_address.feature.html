@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Confirm your address</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to confirm my address before proceeding with the service<br/>So that I can ensure I have supplied the correct address details for my licence
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-02b  User select address and click &quot;No, search again&quot;
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a valid postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I &quot;enter&quot; a valid address
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;No, search again&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Find your address&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03b User select address and then selects &quot;Yes, continue&quot;
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a valid postcode and click on &quot;Find UK address&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I &quot;enter&quot; a valid address
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;How long have you lived at this address?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01  Back button redirects user to the &#39;Find your address&#39; screen
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Is this address correct?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Find your address&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01  Display &quot;Is this address correct?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Is this address correct?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Is this address correct?&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02  Back button redirects user to the &#39;Is this address correct?&#39; screen
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Is this address correct?&quot; page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

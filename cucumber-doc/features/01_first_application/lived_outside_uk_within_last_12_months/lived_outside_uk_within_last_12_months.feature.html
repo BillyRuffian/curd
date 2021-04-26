@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Lived Outside UK Within Last 12 Months</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to provide information on the countries I have lived in within the past 12 months<br/>So that I can provide the correct information for my provisional licence application
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-1  Display &quot;Have you lived outside of the UK in the last 12 months?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Have you lived outside of the UK in the last 12 months?&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01  User has not selected an option
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you have lived outside the UK in the last 12 months</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select yes if you have lived outside the UK in the last 12 months</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you have lived outside the UK in the last 12 months</td>
+<td>capture_lived_outside_uk_decision</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02 &amp; AC-03 User select &#39;Yes&#39; - conditionally revealed textbox
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the country input field is visible
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I begin typing in the non UK country text box
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+a drop-down list of relevant non UK countries which match their current text entry will appear below
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04 Populate field with user selection
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I begin typing in the non UK country text box
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select an non UK option from that drop-down list
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the text box will be populated by my non UK selection
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05  Selects &#39;Yes&#39; then &#39;No&#39;
+</h4>
+<p>The user selects yes, does not enter a country then selects no.<br/>The country field will become hidden</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the country input field is visible
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the country input field is hidden
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06  Select &#39;Yes&#39;, fill in form, select &#39;No
+</h4>
+<p>The user selects yes, enters a country then selects no.<br/>The country field will become hidden</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the country input field is visible
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I begin typing in the non UK country text box
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the country input field is hidden
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07  Check for a valid country
+</h4>
+<p>Entering a country not part of the dropdown list</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter &quot;United Kingdoms&quot; in the country field
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select a country from the list</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select a country from the list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select a country from the list</td>
+<td>country</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09  Select &#39;Yes&#39;, fill in non UK country and proceed
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a non UK country in the country field
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select that option from that drop-down list
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Are you currently disqualified from driving in the UK (including Northern Ireland, Jersey, Guernsey and Isle of Man) or any other country?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-15a User clicks the back link on dropout page - Ineligible countries dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter and select an invalid country in the country field and continue
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01, AC-14a  Display page content - Ineligible countries dropout - Germany
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Have you lived outside of the UK in the last 12 months?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I enter and select an invalid country in the country field and continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Ineligible countries&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the &#39;Redirect to existing service&#39; button has a link to the DLO page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

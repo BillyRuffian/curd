@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Back flow from identity</h2>
+<blockquote>
+This story describes the backward flow of screen within the First Application after Identity - what each Back link should direct to.
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01  -  Over than 17 - Can&#39;t go back after verify
+</h4>
+<p>If the applicant is older than 17 years old, they will not be able to<br/>navigate back once going through identity.<br/><br/>UPDATE<br/>  From DL-1067 Back link no longer present on page immediately after Identity<br/>  Changed test to use browser back link instead</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Contact details&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I navigate backwards in the browser
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;You&#39;re unable to go to the previous page&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02  -  Under 17 - Back button to PIP screen
+</h4>
+<p>If the applicant is younger than 17 years old, they will be sent to the<br/>PIP screen when clicking on the Back link</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Your details&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I continue the application using an identity of a person under 17
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Contact details&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Are you currently claiming Personal Independence Payment (PIP)?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03  -  Organ register back button
+</h4>
+<p>Clicking on the back link on the Organ register screen will send the<br/>applicant back to the Contact details screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Contact details&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04  -  Organ donation back button
+</h4>
+<p>Clicking on the back link on the Organ Donor screen will send the<br/>applicant back to the Organ register screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Organ Donation Optional&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05  -  How to photo and signature back button - Choose to donate
+</h4>
+<p>Applicant - Chooses organs<br/>Clicking on the back link on the How to photo and signature screen will send the<br/>applicant back to the Organ Donation Optional screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select random individual organs
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Organ Donation (optional)&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06  -  How to photo and signature back button - No donation
+</h4>
+<p>Applicant - No organ donation<br/>Clicking on the back link on the How to photo and signature screen will send the<br/>applicant back to the Organ Donation register screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07  -  Passport photo back button
+</h4>
+<p>Clicking on the back link on the Passport photo screen will send the<br/>applicant back to the How to screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;You will now need to provide a photo and signature&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-08  -  Signature photo back button
+</h4>
+<p>Clicking on the back link on the Passport signature screen will send the<br/>applicant back to the Passport photo screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you want to use this signature from your passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09  -  Check your answers back button - Passport signature used
+</h4>
+<p>Clicking on the back link on the Check your answers screen will send the<br/>applicant back to the Passport signature screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you want to use this signature from your passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Check your answers before sending your application&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Do you want to use this signature from your passport on your driving licence?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-10  -  Check your answers back button - Manual signature upload valid
+</h4>
+<p>Clicking on the back link on the Check your answers screen will send the<br/>applicant back to the Check your signature screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you want to use this signature from your passport on your driving licence?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No, I&#39;ll provide my own signature&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select and upload a signature photo
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Check your signature&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-11  -  Payment back button
+</h4>
+<p>Clicking on the back link on the Enter payment details screen will send the<br/>applicant back to the Check your answers screen</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Enter payment details&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Check your answers before sending your application&quot; page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

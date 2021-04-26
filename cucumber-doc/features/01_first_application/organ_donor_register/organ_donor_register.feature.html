@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Organ Donor Register</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to have a choice on whether I would like to be on the NHS Organ Donor Register<br/>So that I am able to decide on whether I would like to donate my organs
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01  Display &quot;Would you like to be on the NHS Organ Donor Register?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Would you like to be on the NHS Organ Donor Register?&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario Outline:
+AC-02, AC-03  User selects option and then selects continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;&lt;option&gt;&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;&lt;page&gt;&quot; page
+</div>
+<div class='keyword'>
+Examples
+
+</div>
+<div class='step'>
+<table class='example-block u-width-full'>
+<thead class='u-width-full'>
+<tr>
+<th>option</th>
+<th>page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yes</td>
+<td>Organ Donation (optional)</td>
+</tr>
+<tr>
+<td>No</td>
+<td>You will now need to provide a photo and signature</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05  User has not selected an option
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I do not select an option and then select continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you would like to be on the Organ Donor Register</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select yes if you would like to be on the Organ Donor Register</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you would like to be on the Organ Donor Register</td>
+<td>capture_organ_donor_decision</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06 and AC-07  User clicks &quot;What is the NHS Organ Donor Register?&quot; link
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I expand the details
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the expanded text is displayed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+collapsing the summary link hides the details
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-1o  No return
+</h4>
+<p>Simple page to be shown to a user who attempts to navigate back in the journey after they have passed certain “no return” points:<br/>- Identity verification - Implemented<br/>- Payment - TODO - Not implemented</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Would you like to be on the NHS Organ Donor Register?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I navigate backwards in the browser 2 times
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Contact details&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

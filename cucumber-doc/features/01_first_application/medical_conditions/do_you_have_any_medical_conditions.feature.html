@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Do you have any medical conditions</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to confirm whether I have any medical conditions<br/>So that I can inform the DVLA of any conditions which may affect my ability to drive
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01  Display &quot;Do you have or have you ever had any of the following medical conditions?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+the correct content is present for &quot;Do you have or have you ever had any of the following medical conditions?&quot;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+all medical conditions are on screen
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02, AC-09  Display &quot;Do you have or have you ever had any of the following medical conditions?&quot; dropout page content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02  -  User has not selected an option
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you have or have ever had any of these medical conditions</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select yes if you have or have ever had any of these medical conditions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you have or have ever had any of these medical conditions</td>
+<td>capture_medical_medical_conditions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06  -  Check your answers
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I choose &quot;No&quot; and continue
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Check your answers before sending your application&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the answer to &quot;Do you have any medical conditions?&quot; is &quot;No&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-15c User clicks the back link on dropout page - Medical conditions dropout
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I choose &quot;Yes&quot; and continue
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Do you have or have you ever had any of the following medical conditions?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my previous answer will be displayed
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03, AC-14c  Display page content - Medical conditions
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have or have you ever had any of the following medical conditions?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I choose yes medical conditions and continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Sorry, you&#39;re unable to continue as this is a new service in development&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Medical conditions&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the &#39;Redirect to existing service&#39; button has a link to the DLO page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

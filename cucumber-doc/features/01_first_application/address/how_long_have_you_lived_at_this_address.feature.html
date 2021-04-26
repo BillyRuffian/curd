@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>How long have you lived at this address</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to confirm how long I have lived at my address<br/>So that I can help to verify my identity
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01 and AC-02  Display page content and last provided address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;How long have you lived at this address?&quot;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+my current address will be displayed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the details are hidden
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03 and AC-04  Expand/collapse the “Why is DVLA asking for my address history?” section
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the details are hidden
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I expand the details
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the expanded text is displayed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+collapsing the summary link hides the details
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05 and AC-06  Limit length of years and month fields
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I enter more than the allowable characters in a field
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Field</td>
+<td>Allowable characters</td>
+</tr>
+<tr>
+<td>years</td>
+<td>3</td>
+</tr>
+<tr>
+<td>months</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the field will only contain the allowable characters
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Field</td>
+<td>Allowable characters</td>
+</tr>
+<tr>
+<td>years</td>
+<td>3</td>
+</tr>
+<tr>
+<td>months</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07  Limit input to years and months fields
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+entering a non-digit in a field will be prevented
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Field</td>
+</tr>
+<tr>
+<td>years</td>
+</tr>
+<tr>
+<td>months</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario Outline:
+AC-08  Sanitise inputs
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter valid data in the &lt;Field&gt; field with whitespace and continue
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+all whitespace will be removed from the &lt;Field&gt; field
+</div>
+<div class='keyword'>
+Examples
+
+</div>
+<div class='step'>
+<table class='example-block u-width-full'>
+<thead class='u-width-full'>
+<tr>
+<th>Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>years</td>
+</tr>
+<tr>
+<td>months</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09a  Validate inputs - Conditionally mandatory
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I do not enter any information and Continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Enter the time you have lived at this address</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Enter the time you have lived at this address</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Enter the time you have lived at this address</td>
+<td>Years</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09b  Validate inputs - Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+entering an invalid length of time and continuing will invoke the following errors:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Fields</td>
+<td>Invalid data</td>
+<td>Attribute</td>
+<td>Error</td>
+<td>Focusable field</td>
+</tr>
+<tr>
+<td>Years, Months</td>
+<td>Range</td>
+<td>Error Summary, Error Message</td>
+<td>Years must be a number between and including 0 and 150 and months must be a number between and including 0 and 11</td>
+<td>Years</td>
+</tr>
+<tr>
+<td>Years, Months</td>
+<td>Zero</td>
+<td>Error Summary, Error Message</td>
+<td>Enter the time you have lived at this address</td>
+<td>Years</td>
+</tr>
+<tr>
+<td>Years</td>
+<td>Range</td>
+<td>Error Summary, Error Message</td>
+<td>Years must be a number between and including 0 and 150</td>
+<td>Years</td>
+</tr>
+<tr>
+<td>Months</td>
+<td>Range</td>
+<td>Error Summary, Error Message</td>
+<td>Months must be a number between and including 0 and 11</td>
+<td>Months</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-01  Back button redirects user to the &#39;Is this address correct?&#39; screen
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Is this address correct?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02  User enters less than 3 years into time at current address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I enter a time of less than three years and continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03  User enters more than or equal to 3 years into time at current address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I enter a time of more than or equal to three years and continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Which country were you born in?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04  User amends time at current address after entering a previous address
+</h4>
+<p>User goes back and amends the time at current address to be longer than 3 years after entering both current and previous addresses.<br/>This results in the flow of the application changing to no longer include a previous address.</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;How long have you lived at this address?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a time of less than three years and continue
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a previous address and proceed to the &quot;Which country were you born in?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;Back&quot; link 6 times
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I enter a time of more than or equal to three years and continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Which country were you born in?&quot; page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

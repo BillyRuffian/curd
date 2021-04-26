@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Do you have your National Insurance number</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to enter my National Insurance number<br/>So that I can verify my identity<br/><br/>NOTE:  AC-08 - Omitted from ACs
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01  Display &quot;Do you have your National Insurance number?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Do you have your National Insurance number?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Do you have your National Insurance number?&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02/AC-10  User enters national national insurance number and selects continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a valid National Insurance number
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Contact details&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02/AC-03  No option selected and continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I do not select an option and then select continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select yes if you have your National Insurance Number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select yes if you have your National Insurance Number</td>
+<td>Has ni</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03  Selects no and continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Contact details&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04  Selects yes - Conditionally reveal text box
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the following page content is not present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Input ID</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following page content is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Input ID</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05  Selects yes, doesn&#39;t enter anything, selects no - Hide textbox
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the following page content is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Input ID</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;No&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following page content is not present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Input ID</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06  Selects yes, enters text, selects no - Lose entry and hide textbox
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a valid National Insurance number
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39;
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the &quot;NI number&quot; field is empty
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07  Selects yes, enters text, selects no - No JS
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+javascript is disabled
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I enter a valid National Insurance number
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39;
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the &quot;NI number&quot; field is empty
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09a  Selects yes, clicks continue - Validation failed - Conditionally Mandatory
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I do not enter any information and Continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Enter your National Insurance Number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Enter your National Insurance Number</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-09b  Selects yes, clicks continue - Validation failed - Allowed Characters
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Do you have your national insurance number?&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;Yes&#39;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+entering an invalid national insurance number and continuing will invoke the following errors:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Field</td>
+<td>Invalid data</td>
+<td>Attribute</td>
+<td>Error</td>
+<td>Focusable field</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid length</td>
+<td>Error Summary, Error Message</td>
+<td>National Insurance Number must be either eight or nine characters long</td>
+<td>NI number</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid character combinations</td>
+<td>Error Summary, Error Message</td>
+<td>Enter a valid National Insurance Number</td>
+<td>NI number</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid character position</td>
+<td>Error Summary, Error Message</td>
+<td>Enter a valid National Insurance Number</td>
+<td>NI number</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid optional character</td>
+<td>Error Summary, Error Message</td>
+<td>Enter a valid National Insurance Number</td>
+<td>NI number</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid special character</td>
+<td>Error Summary, Error Message</td>
+<td>Enter a valid National Insurance Number</td>
+<td>NI number</td>
+</tr>
+<tr>
+<td>NI number</td>
+<td>Invalid format</td>
+<td>Error Summary, Error Message</td>
+<td>Enter a valid National Insurance Number</td>
+<td>NI number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the invalid &quot;NI number&quot; field data is not empty
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Address not found</h2>
+<blockquote>
+As a service designer<br/>I want customers who cannot find their addresses to have tailored screens giving advice on the specific situation they are in<br/>So that they can make the best possible choice in how to continue with their application
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01b, AC-03b  &#39;Address not found&#39; dropout page content when no results are found for previous address
+</h4>
+<p>Note:  Static page content is asserted at the end as it doesn&#39;t change<br/>Dynamic values are asserted on each iteration of the data table</p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+entering the following address details takes me to the &quot;Address not found&quot; page and the address details are present
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>house number</td>
+<td>postcode</td>
+</tr>
+<tr>
+<td></td>
+<td>DT511PB</td>
+</tr>
+<tr>
+<td>100</td>
+<td>SA18EN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Address not found for previous address&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02b  Redirect to the dropout page from the &#39;Select your address&#39; page - Previous address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Select your address&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;My address is not on the list&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+the correct content is present for dropout page &quot;Address not found for previous address&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04b  User clicks on the &#39;You can try again&#39; link after attempting to find their previous address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode which has not been found
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;You can try again&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-05b  Continue button proceeds to the country of birth page and the back link redirects to address not found page
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode which has not been found
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Which country were you born in?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06c  Back link redirect to Find your address - Previous address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode which has not been found
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Find your address&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-06d  Back link redirect to Select your address - Previous address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Was your previous address in the United Kingdom?&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;Yes&#39; and proceed
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Select your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;My address is not on the list&quot; link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Select your address&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07c  Back link redirect to Find your address - Current address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode which has not been found
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Find your address&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-07d  Back link redirect to Select your address - Current address
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Find your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I submit a valid postcode
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Select your address&quot; page
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I click the &quot;My address is not on the list&quot; link
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I am presented with the &quot;Address not found&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click the &quot;Back&quot; link
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Select your address&quot; page
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

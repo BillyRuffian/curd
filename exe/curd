@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'curd'
+require 'curd/configuration'
+require 'curd/engine'
+
+require 'cuke_modeler'
+require 'optparse'
+
+config = Curd::Configuration.new
+config.output_dir = 'cucumber-doc'
+
+OptionParser.new do |opts|
+  opts.banner = 'Usage: curd <feature_path>'
+  opts.on('-oDIRECTORY',
+          '--out DIRECTORY',
+          'The output directory') do |dir|
+    config.output_dir = dir
+  end
+end.parse!
+
+features = ARGV.first || 'features'
+
+input_dir = CukeModeler::Directory.new(features)
+engine = Curd::Engine.new(config)
+engine.render(input_dir)

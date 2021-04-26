@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Which country were you born in</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to provide which country I was born in, during my application<br/>So that I can provide the correct information for my licence application
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01 - Display &quot;What country were you born in?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Which country were you born in?&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the correct content is present for &quot;Which country were you born in?&quot;
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02.1 User begins to enter country
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I begin typing in the non UK country text box
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+a drop-down list of non UK countries which match their current text entry will appear below
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-02.2 User begins to enter country
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I begin typing in the country text box
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+a drop-down list of countries which match their current text entry will appear below
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I continue typing the country
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the suggestions will dynamically be updated to continue to provide a best match
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03 - User selects country from drop-down list
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I begin typing in the country text box
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+a drop-down list of countries which match their current text entry will appear below
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select an option from that drop-down list
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the text box will be populated by my selection
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-04 - User has entered a country and selects &quot;Continue&quot;
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I begin typing in the country text box
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+I select an option from that drop-down list
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am redirected to the &quot;Enter your UK passport number&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC05 - User has not made an entry and selects &quot;Continue&quot;
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select a country from the list</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select a country from the list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+that field shall also be highlighted as an error
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select a country from the list</td>
+<td>country_of_birth_country</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC02 - User submits an invalid entry
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I submit &quot;Toon Town&quot; as the place of birth
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the following error is present:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Attribute</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Error Summary</td>
+<td>Select a country from the list</td>
+</tr>
+<tr>
+<td>Error Message</td>
+<td>Select a country from the list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+that field shall also be highlighted as an error
+</div>
+<div class='keyword'>And</div>
+<div class='step'>
+clicking on the error link will focus the cursor into the corresponding field:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error text</td>
+<td>Field ID</td>
+</tr>
+<tr>
+<td>Select a country from the list</td>
+<td>country_of_birth_country</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

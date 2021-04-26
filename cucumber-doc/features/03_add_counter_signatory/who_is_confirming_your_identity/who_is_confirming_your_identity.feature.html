@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Who is Confirming your Identity</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want to be able to provide the details of the person confirming my identity<br/>So that this person can be sent the necessary documents in order to confirm my identity
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-02  User makes and entry into all fields and selects &quot;continue&quot;
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Who is confirming your identity&quot; page and completed the form
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;Request sent&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03 to AC-05 and AC-07  Missing content in form fields
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Who is confirming your identity&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+leaving a field blank and continuing will invoke the following errors:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Blank fields</td>
+<td>Attribute</td>
+<td>Error</td>
+<td>Focusable field</td>
+</tr>
+<tr>
+<td>Firstnames</td>
+<td>Error Summary</td>
+<td>Provide a first name to continue</td>
+<td>Firstnames</td>
+</tr>
+<tr>
+<td>Firstnames</td>
+<td>Error Message</td>
+<td>Provide a first name to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Lastname</td>
+<td>Error Summary</td>
+<td>Provide a last name to continue</td>
+<td>Lastname</td>
+</tr>
+<tr>
+<td>Lastname</td>
+<td>Error Message</td>
+<td>Provide a last name to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Error Summary</td>
+<td>Provide an email address to continue</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Error Message</td>
+<td>Provide an email address to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Error Summary</td>
+<td>Provide a confirmation to continue</td>
+<td>Confirmation</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Error Message</td>
+<td>Provide a confirmation to continue</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-08  Missing content in multiple fields
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Who is confirming your identity&quot; page
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I do not enter any information and Continue
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the error summary displays errors in the following order:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Error</td>
+</tr>
+<tr>
+<td>Provide a first name to continue</td>
+</tr>
+<tr>
+<td>Provide a last name to continue</td>
+</tr>
+<tr>
+<td>Provide an email address to continue</td>
+</tr>
+<tr>
+<td>Provide a confirmation to continue</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

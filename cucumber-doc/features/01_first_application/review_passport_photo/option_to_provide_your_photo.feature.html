@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Option To Provide Your Photo</h2>
+<blockquote>
+As a customer wishing to apply for a provisional licence online<br/>I want see the options for how I can provide my digital photo<br/>So that I can determine the best way to provide my digital photo
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-01 Display &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot; Content
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+the correct content is present for &quot;Confirm you want to use this photo from your UK passport on your driving licence?&quot;
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+the user&#39;s passport photo will be displayed as a preview
+</div>
+</div>
+<hr>
+<h4>
+Scenario Outline:
+AC-2, AC-3 - User selects &quot;Upload a digital photo&quot; or &quot;Take a digital photo&quot; and then selects continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I select &#39;No&#39; and proceed
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I select &#39;&lt;selected_photo_option&gt;&#39; and proceed
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;You will now need to provide a photo and signature&quot; page
+</div>
+<div class='keyword'>
+Examples
+
+</div>
+<div class='step'>
+<table class='example-block u-width-full'>
+<thead class='u-width-full'>
+<tr>
+<th>selected_photo_option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upload a digital photo</td>
+</tr>
+<tr>
+<td>Take a digital photo</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<!--
+Basic Page Needs
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta charset='utf-8'>
+<title>Your page title here :)</title>
+<meta content='' name='description'>
+<meta content='' name='author'>
+<!--
+Mobile Specific Metas
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<!--
+FONT
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='https://fonts.gstatic.com' rel='preconnect'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&amp;family=Source+Sans+Pro&amp;display=swap' rel='stylesheet'>
+<!--
+CSS
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='../../../css/normalize.css' rel='stylesheet'>
+<link href='../../../css/skeleton.css' rel='stylesheet'>
+<link href='../../../css/piccalilli.css' rel='stylesheet'>
+<!--
+Favicon
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<link href='images/favicon.png' rel='icon' type='image/png'>
+</head>
+<body>
+<!--
+Primary Page Layout
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+<div class='container' style='margin-top: 2em'>
+<section class='feature'>
+<h2>Sign In</h2>
+<blockquote>
+As a user wanting to confirm a provisional applicant’s identity<br/>I want to confirm my identity and pass security checks<br/>So that I can progress the confirmation
+</blockquote>
+</section>
+<section class='scenarios'>
+<h4>
+Scenario:
+AC-02  User makes a valid entry into all text fields and selects continue
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>And</div>
+<div class='step'>
+I have accessed the &quot;Sign In&quot; page and completed the form
+</div>
+<div class='keyword'>When</div>
+<div class='step'>
+I click on Sign in
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+I am presented with the &quot;What happens next&quot; page
+</div>
+</div>
+<hr>
+<h4>
+Scenario:
+AC-03 to AC-08  Missing content in fields
+</h4>
+<p></p>
+<div class='steps'>
+<div class='keyword'>When</div>
+<div class='step'>
+I have accessed the &quot;Sign In&quot; page
+</div>
+<div class='keyword'>Then</div>
+<div class='step'>
+leaving a field blank and continuing will invoke the following errors:
+<table class='step-block u-width-full'>
+<tbody class='u-width-full'>
+<tr>
+<td>Blank fields</td>
+<td>Attribute</td>
+<td>Error</td>
+<td>Focusable field</td>
+</tr>
+<tr>
+<td>Application reference</td>
+<td>Error Summary</td>
+<td>Provide a reference number to continue</td>
+<td>Application reference</td>
+</tr>
+<tr>
+<td>Application reference</td>
+<td>Error Message</td>
+<td>Provide a reference number to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Day</td>
+<td>Error Summary</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Day</td>
+<td>Error Message</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Month</td>
+<td>Error Summary</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Month</td>
+<td>Error Message</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Error Summary</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Error Message</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Application reference, Day</td>
+<td>Error Summary</td>
+<td>Provide a reference number to continue, Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Day, Month, Year</td>
+<td>Error Summary</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+<tr>
+<td>Day, Month, Year</td>
+<td>Error Message</td>
+<td>Provide a date of birth to continue</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+
+</div>
+<!--
+End Document
+––––––––––––––––––––––––––––––––––––––––––––––––––
+-->
+</body>
+</html>
