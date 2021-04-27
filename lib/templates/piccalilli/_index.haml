@@ -1,0 +1,14 @@
+
+- unless tree.leaves.empty?
+  %ul.leaves
+    - tree.leaves.sort_by {|l| l[:name] }.each do |leaf|
+      %li.step
+        %a{ href: "#{leaf[:dir]}/#{leaf[:name]}.html" }=leaf[:name]
+
+- unless tree.children.empty?
+
+  %ul.nodes
+    - tree.children.sort.each do |child|
+      %li
+        = child.value
+        = render_partial 'index', tree: child

@@ -54,6 +54,7 @@ blockquote span{
   border-radius: 4px;;
   padding: 1rem 1.5rem;
   display: block;
+  overflow-wrap: break-word;
 }
 
 .keyword {
@@ -71,6 +72,7 @@ blockquote span{
   padding: 1rem 1.5rem;
   display: block;
   box-shadow: 0 1px 4px #e0e0dc;
+  overflow-wrap: break-word;
 }
 
 .step-block {
@@ -107,4 +109,25 @@ tbody, thead {
 
 table tbody > tr:last-child > td {
   border-bottom: 0;
+}
+
+ul.nodes, ul.leaves {
+ font-family: 'Source Sans Pro'; 
+ margin-left: 1.5rem;
+ margin-top: 0.3rem;
+ list-style: none;
+}
+
+ul.nodes, ul.leaves li {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+ul.leaves li {
+  font-size: 1rem;
+  margin-bottom: -1px;
+}
+
+ul.leaves a {
+  text-decoration: none;
 }

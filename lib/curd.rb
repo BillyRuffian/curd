@@ -1,5 +1,6 @@
 require "curd/engine"
 require "curd/configuration"
+require "curd/tree"
 require "curd/version"
 
 require 'cgi'
@@ -19,11 +20,20 @@ module Curd
     pp d.feature_files.map(&:name)
   end
 
+  def self.process(path)
+    input_dir = CukeModeler::Directory.new(path)
+    engine.render(input_dir)
+  end
+
   def self.configuration
     @configuration ||= Configuration.new
   end
 
   def self.configure
     yield(configuration) if block_given?
+  end
+
+  def self.engine
+    @engine ||= Curd::Engine.new(configuration)
   end
 end

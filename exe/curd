@@ -2,26 +2,45 @@
 # frozen_string_literal: true
 
 require 'curd'
-require 'curd/configuration'
-require 'curd/engine'
 
 require 'cuke_modeler'
 require 'optparse'
+require 'tty-spinner'
 
-config = Curd::Configuration.new
-config.output_dir = 'cucumber-doc'
+class Curdle
 
-OptionParser.new do |opts|
-  opts.banner = 'Usage: curd <feature_path>'
-  opts.on('-oDIRECTORY',
-          '--out DIRECTORY',
-          'The output directory') do |dir|
-    config.output_dir = dir
+  def initialize
+    @spinner = TTY::Spinner.new(':spinner :title', format: :dots_2, clear: true)
   end
-end.parse!
 
-features = ARGV.first || 'features'
+  def update(feature_file)
+    @spinner.update(title: feature_file.name)
+    @spinner.auto_spin
+  end
 
-input_dir = CukeModeler::Directory.new(features)
-engine = Curd::Engine.new(config)
-engine.render(input_dir)
+  def run
+    output_dir = 'cucumber-doc'
+
+    OptionParser.new do |opts|
+      opts.banner = 'Usage: curd <feature_path>'
+      opts.on('-oDIRECTORY',
+              '--out DIRECTORY',
+              'The output directory') do |dir|
+        output_dir = dir
+      end
+    end.parse!
+
+    features = ARGV.first || 'features'
+
+    Curd.configure do |config|
+      config.output_dir = output_dir
+    end
+
+    Curd.engine.add_observer(self)
+
+    Curd.process(features)
+    @spinner.stop
+  end
+end
+
+Curdle.new.run

@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'cuke_modeler', '~> 3.8'
   spec.add_runtime_dependency 'haml', '~> 5.2'
   spec.add_runtime_dependency 'tilt', '~> 2.0'
+  spec.add_runtime_dependency 'tty-spinner', '~> 0.9'
 end
