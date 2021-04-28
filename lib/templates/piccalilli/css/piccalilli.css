@@ -96,6 +96,34 @@ blockquote span{
   margin: 0 2rem;
 }
 
+.badge{
+  font-size: 1.2rem;
+  display: inline-block;
+  font-family: 'Source Sans Pro';  
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 0.2rem;
+  background-color: #d4d4d4;
+  padding: .35rem .65rem;
+}
+
+.tags {
+  font-family: 'Source Sans Pro';  
+  list-style: none;
+  padding: 0;
+  color: #ad5a4b;
+}
+
+.tags .tag {
+  display: inline;
+  border: 1px solid #e1e1e1;
+  background-color: #fffef7;
+  border-radius: 5px;
+  padding: .35rem .65rem;
+}
+
 /* table {
   overflow-x: auto;
   display: block;

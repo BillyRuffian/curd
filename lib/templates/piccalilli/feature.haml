@@ -1,50 +1,17 @@
 %section.feature
   %h2=h file.feature.name.empty? ? file.name : file.feature.name
+  
+  = render_partial('tags', tags: file.feature.tags)
 
   - unless file.feature.description.empty?
     %blockquote
       =h(file.feature.description).gsub("\n", "<br/>")
 
 %section.scenarios
+  - if file.feature.background
+    = render_partial('scenario', test: file.feature.background, div_id: file.feature.background.parsing_data.dig(:background, :id))
+
+
+
   - file.feature.tests.each do |test|
-    %h4
-      = succeed ':' do 
-        =h test.keyword
-      =h test.name
-    %p=h(test.description).gsub("\n", "<br/>")
-
-    .steps
-      - test.steps.each do |step|
-        .keyword=h step.keyword
-        .step
-          =h step.text
-          - if step.block.is_a? CukeModeler::Table
-            %table.step-block.u-width-full
-              %tbody.u-width-full
-                - step.block.rows.each do |row|
-                  %tr
-                    - row.cells.each do |cell|
-                      %td=h cell.value
-          -elsif step.block.is_a? CukeModeler::DocString
-            .step-block
-              =h(step.block.content).gsub("\n", "<br/>")
-      
-      - if test.respond_to?(:examples)
-        - test.examples.each do |example|   
-          .keyword
-            =h example.keyword
-            =h example.name
-          .step
-            %table.example-block.u-width-full
-              %thead.u-width-full
-                %tr
-                  - example.rows.first.cells.each do |header|
-                    %th=h header.value
-              %tbody
-                - example.rows[1..-1].each do |row|
-                  %tr
-                    - row.cells.each do |cell|
-                      %td=h cell.value
-
-
-    %hr/
+    = render_partial('scenario', test: test, div_id: test.parsing_data.dig(:scenario, :id))

@@ -1,0 +1,4 @@
+- unless tags.empty?
+  %ul.tags
+    - tags.each do |tag|
+      %li.tag= h tag.name

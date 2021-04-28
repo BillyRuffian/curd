@@ -1,0 +1,43 @@
+.badge=h test.keyword
+
+%h4{id: div_id}=h test.name
+- if test.description && !test.description.empty?
+  %p=h(test.description).gsub("\n", "<br/>")
+
+= render_partial('tags', tags: test.tags) if test.respond_to?(:tags)
+
+.steps
+  - test.steps.each do |step|
+    .keyword=h step.keyword
+    .step
+      =h step.text
+      - if step.block.is_a? CukeModeler::Table
+        %table.step-block.u-width-full
+          %tbody.u-width-full
+            - step.block.rows.each do |row|
+              %tr
+                - row.cells.each do |cell|
+                  %td=h cell.value
+      -elsif step.block.is_a? CukeModeler::DocString
+        .step-block
+          =h(step.block.content).gsub("\n", "<br/>")
+  
+  - if test.respond_to?(:examples)
+    - test.examples.each do |example|   
+      .keyword
+        =h example.keyword
+        =h example.name
+      .step
+        %table.example-block.u-width-full
+          %thead.u-width-full
+            %tr
+              - example.rows.first.cells.each do |header|
+                %th=h header.value
+          %tbody
+            - example.rows[1..-1].each do |row|
+              %tr
+                - row.cells.each do |cell|
+                  %td=h cell.value
+
+
+%hr/
