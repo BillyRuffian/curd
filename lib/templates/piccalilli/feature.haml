@@ -9,9 +9,7 @@
 
 %section.scenarios
   - if file.feature.background
-    = render_partial('scenario', test: file.feature.background, div_id: file.feature.background.parsing_data.dig(:background, :id))
-
-
+    = render_partial('scenario', test: file.feature.background, div_id: file.feature.background.parsing_data.to_h.dig(:background, :id))
 
   - file.feature.tests.each do |test|
-    = render_partial('scenario', test: test, div_id: test.parsing_data.dig(:scenario, :id))
+    = render_partial('scenario', test: test, div_id: test.parsing_data.to_h.dig(:scenario, :id))
